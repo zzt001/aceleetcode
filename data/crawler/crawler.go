@@ -6,7 +6,10 @@ import (
 	"net/http"
 )
 
-const DATA_URL = `http://leetcode.com/api/problems/algorithms/`
+const (
+	BASE_URL = `http://leetcode.com/api/problems/`
+	DATA_URL = BASE_URL + `algorithms/`
+)
 
 func CrawlData() (*Dto, error) {
 	resp, err := http.Get(DATA_URL)
