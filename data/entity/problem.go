@@ -14,11 +14,11 @@ const (
 )
 
 type Problem struct {
-	ID        int
-	Lv        Level
-	Url       string
-	Title     string
-	Frequency float64
+	ID        int     `db:"problem_id"`
+	Lv        Level   `db:"level"`
+	Url       string  `db:"link"`
+	Title     string  `db:"title"`
+	Frequency float64 `db:"frequency"`
 }
 
 func NewProblem(id int, title, url string, lv int, freq float64) (*Problem, error) {
