@@ -2,6 +2,7 @@ package db
 
 import (
 	"database/sql"
+	"errors"
 	"os"
 	"path"
 
@@ -31,22 +32,24 @@ func NewDB(dataFolder string) (*gorp.DbMap, error) {
 	dbmap := &gorp.DbMap{Db: db, Dialect: gorp.SqliteDialect{}}
 
 	// add tables here
-	err = AddProblemTable(dbmap)
+	err = createProblemTable(dbmap)
 	if err != nil {
 		return nil, err
 	}
 	return dbmap, nil
 }
 
-func AddProblemTable(dbMap *gorp.DbMap) error {
+func createProblemTable(dbMap *gorp.DbMap) error {
 	if dbMap != nil {
 		dbMap.AddTableWithName(entity.Problem{}, "lc_problem").SetKeys(false, "problem_id")
+		return dbMap.CreateTablesIfNotExists()
 	}
-	return dbMap.CreateTablesIfNotExists()
+	return errors.New("dbMap should not be nil")
 }
 
-func DropProblemTable(dbMap *gorp.DbMap) {
+func dropProblemTable(dbMap *gorp.DbMap) error {
 	if dbMap != nil {
-		dbMap.DropTableIfExists(entity.Problem{})
+		return dbMap.DropTableIfExists(entity.Problem{})
 	}
+	return errors.New("dbMap should not be nil")
 }

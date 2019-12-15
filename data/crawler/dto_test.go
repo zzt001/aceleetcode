@@ -25,7 +25,6 @@ var testTable = []struct {
 					crawler.Difficulty{
 						Level: 1,
 					},
-					0.0,
 				},
 				{crawler.Stat{
 					QuestionId: 2,
@@ -35,7 +34,6 @@ var testTable = []struct {
 					crawler.Difficulty{
 						Level: 2,
 					},
-					0.5,
 				},
 				{crawler.Stat{
 					QuestionId: 3,
@@ -45,31 +43,27 @@ var testTable = []struct {
 					crawler.Difficulty{
 						Level: 3,
 					},
-					0.4,
 				},
 			},
 		},
 		out: []*entity.Problem{
 			{
-				ID:        1,
-				Lv:        entity.Easy,
-				Title:     "problem1",
-				Url:       crawler.BASE_URL + "problme-1",
-				Frequency: 0.0,
+				ID:    1,
+				Lv:    entity.Easy,
+				Title: "problem1",
+				Url:   crawler.BASE_URL + "problme-1",
 			},
 			{
-				ID:        2,
-				Lv:        entity.Medium,
-				Title:     "problem2",
-				Url:       crawler.BASE_URL + "problme-2",
-				Frequency: 0.5,
+				ID:    2,
+				Lv:    entity.Medium,
+				Title: "problem2",
+				Url:   crawler.BASE_URL + "problme-2",
 			},
 			{
-				ID:        3,
-				Lv:        entity.Hard,
-				Title:     "problem3",
-				Url:       crawler.BASE_URL + "problme-3",
-				Frequency: 0.4,
+				ID:    3,
+				Lv:    entity.Hard,
+				Title: "problem3",
+				Url:   crawler.BASE_URL + "problme-3",
 			},
 		},
 	},

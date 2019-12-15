@@ -16,7 +16,6 @@ type Dto struct {
 type Pair struct {
 	Stat       `json:"stat"`
 	Difficulty `json:"difficulty"`
-	Freq       float64 `json:"frequency"`
 }
 
 type Difficulty struct {
@@ -26,7 +25,7 @@ type Difficulty struct {
 type Stat struct {
 	QuestionId int    `json:"question_id"`
 	Title      string `json:"question__title"`
-	Slug       string `json:"question_title_slug"`
+	Slug       string `json:"question__title_slug"`
 }
 
 func (dto *Dto) ToProblems() (pbs []*entity.Problem, err error) {
@@ -38,7 +37,7 @@ func (dto *Dto) ToProblems() (pbs []*entity.Problem, err error) {
 		if err != nil {
 			fmt.Printf("could not get entity link of %v, will set to empty\n", pair)
 		}
-		pb, err := entity.NewProblem(pair.QuestionId, pair.Title, link, pair.Level, pair.Freq)
+		pb, err := entity.NewProblem(pair.QuestionId, pair.Title, link, pair.Level)
 		if err != nil {
 			fmt.Println(err)
 			continue

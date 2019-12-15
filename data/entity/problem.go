@@ -14,18 +14,17 @@ const (
 )
 
 type Problem struct {
-	ID        int     `db:"problem_id"`
-	Lv        Level   `db:"level"`
-	Url       string  `db:"link"`
-	Title     string  `db:"title"`
-	Frequency float64 `db:"frequency"`
+	ID    int    `db:"problem_id"`
+	Lv    Level  `db:"level"`
+	Url   string `db:"link"`
+	Title string `db:"title"`
 }
 
-func NewProblem(id int, title, url string, lv int, freq float64) (*Problem, error) {
+func NewProblem(id int, title, url string, lv int) (*Problem, error) {
 	if lv < 1 || lv > 3 {
 		return nil, errors.New(fmt.Sprintf("invalid level get %v", lv))
 	}
-	return &Problem{ID: id, Lv: Level(lv), Url: url, Title: title, Frequency: freq}, nil
+	return &Problem{ID: id, Lv: Level(lv), Url: url, Title: title}, nil
 }
 
 func (l Level) String() string {
