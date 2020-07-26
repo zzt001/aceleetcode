@@ -11,6 +11,11 @@ Phase 1: Design the data structure and database.
 Phase 2: Design the CLI and implement the func from front-end to back-end
 Phase 3: Add test cases and collect feedbacks
 
+Data: crawled leetcode problems + user records
+1. help user map input problem_id -> Problem{name, link, level, freq, topic}
+2. could update leetcode problems to avoid stale data
+
+
 Design CLI:
 acee 
 
@@ -24,3 +29,5 @@ acee
 
 5. -h
   --help: help messages
+  
+6. update (update leetcode problem set)
