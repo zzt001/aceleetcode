@@ -3,6 +3,13 @@
 Acee, meaning "ace the leetcode", is a program to record your daily problem solving, and generate recommended problem sets by algorithm, 
 to help you reinforce the frequently incorrect problems.
 
+Tech Stack:
+Golang + embedded db(sqlite3) + cobra(CLI framework)
+
+Plan:
+Phase 1: Design the data structure and database. 
+Phase 2: Design the CLI and implement the func from front-end to back-end
+Phase 3: Add test cases and collect feedbacks
 
 Design CLI:
 acee 
