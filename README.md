@@ -7,9 +7,9 @@ Tech Stack:
 Golang + embedded db(sqlite3) + cobra(CLI framework)
 
 Plan:
-  Phase 1: Design the data structure and database. 
-  Phase 2: Design the CLI and implement the func from front-end to back-end
-  Phase 3: Add test cases and collect feedbacks
+- Phase 1: Design the data structure and database. 
+- Phase 2: Design the CLI and implement the func from front-end to back-end
+- Phase 3: Add test cases and collect feedbacks
 
 Data: crawled leetcode problems + user records
 1. help user map input problem_id -> Problem{name, link, level, freq, topic}
